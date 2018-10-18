@@ -5,8 +5,8 @@ This problem provides practice at:
   ***  FOR and WHILE loops.  ***
 
 Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Evan Cochrane.
+"""  # 1: DONE PUT YOUR NAME IN THE ABOVE LINE.
 
 ########################################################################
 # Students:
@@ -45,7 +45,7 @@ def main():
 def run_test_practice_problem3():
     """ Tests the   practice_problem3  function. """
     ####################################################################
-    # TODO: 2. Implement this TEST function.
+    # 2: DONE Implement this TEST function.
     #   It TESTS the  practice_problem3  function defined below.
     #   Include at least ** 2 ** ADDITIONAL tests beyond those we wrote.
     #
@@ -135,6 +135,15 @@ def run_test_practice_problem3():
     #             that they are adequate tests!
     ####################################################################
 
+    tests = [st.SimpleTestCase(practice_problem3,
+                               [0, 10, -2],
+                               [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]),
+             st.SimpleTestCase(practice_problem3,
+                               [-1000, 1, 0],
+                               [-999]), ]
+
+    st.SimpleTestCase.run_tests('practice_problem3', tests)
+
 
 def practice_problem3(start, n, threshold):
     """
@@ -208,7 +217,7 @@ def practice_problem3(start, n, threshold):
       :type threshold: float
     """
     ####################################################################
-    # TODO: 3. Implement and test this function.
+    # 3: DONE Implement and test this function.
     #          Some tests are already written for you (above),
     #          but you are required to write ADDITIONAL tests (above).
     ####################################################################
@@ -216,6 +225,16 @@ def practice_problem3(start, n, threshold):
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   < 15 minutes.
     ####################################################################
+
+    k = start
+    out = []
+
+    while len(out) < n:
+        if math.cos(k) + math.sin(k) > threshold:
+            out += [k]
+        k += 1
+
+    return out
 
 
 # ----------------------------------------------------------------------
